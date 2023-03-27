@@ -1,37 +1,38 @@
 # PassGenius
-PassGenius - это инструмент командной строки для генерации и сохранения надежных паролей. Программа не хранит пароли, а генерирует их на основе мастер-пароля и URL-адреса сервиса.
+PassGenius is a command-line tool for generating and saving strong passwords. The program does not store passwords but generates them based on a master password and the service URL.
 
 
-## Установка
-Склонируйте репозиторий на свою локальную машину:
+## Installation
+Clone the repository to your local machine:
 
 ```shell
 git clone https://github.com/TE1ch0st/passgenius.git
 ```
-## Использование
-PassGenius может быть использован для генерации безопасных паролей, а также позволяет заменять скомпрометированные пароли на новые, если это необходимо.
+## Usage
+PassGenius can be used for generating secure passwords and can also replace compromised passwords with new ones if necessary.
 
-## Вызов справки
+## Help Command
 ```shell
 python3 PassGenius.py --help
 
-Список команд
-        -h --help : Вызов справки
-        gen : Инструмент генерации пароля
-         rep (replace) : Инструмент для смены пароля
+List of Commands:
+        -h --help : Display help message
+        gen : Password generation tool
+         rep (replace) : Password replacement tool
 
     -----------------------------
-    gen (generate) [flags] - Генерация пароля
-         -d --Domain [url] :  URL адрес сайта
-         -s --Secret [password] : Мастер пароль для генерации
-         -l --Len [number] : Длина пароля (По умолчанию: 25)
+    gen (generate) [flags] - Password generation
+         -d --Domain [url] : Service URL
+         -s --Secret [password] : Master password for generation
+         -l --Len [number] : Password length (Default: 25)
 
     -----------------------------
-    rep (replace) [flag] - Замена пароля
-         -p --Password [you_password] : Пароль требующий замены
+    rep (replace) [flag] - Password replacement
+         -p --Password [you_password] : Password to be replaced
+
 ```
 
-## Лицензия
+## License
 Licensed under the Apache License, Version 2.0
 
 ---
