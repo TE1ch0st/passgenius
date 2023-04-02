@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор паролей</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type=url], input[type=password], input[type=number] {
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            padding: 5px;
+            width: 100%;
+        }
+
+        button[type=submit] {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 767.98px) {
+            form {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-3"><a class="text-decoration-none" href="/">PassGenius</a></h1>
+    <div class="row">
+        <div class="col">
+            <form class="w-50" style="margin-right: auto; margin-left: auto; margin-bottom: 30px;" method="post"
+                  action="/generate">
+                <h2>Генерация пароля</h2>
+                <div class="form-group">
+                    <label for="domain">URL адрес сайта:</label>
+                    <input type="text" class="form-control" id="domain" name="domain" required>
+                </div>
+                <div class="form-group">
+                    <label for="secret">Мастер пароль:</label>
+                    <input type="password" class="form-control" id="secret" name="secret" required>
+                </div>
+                <div class="form-group">
+                    <label for="len">Длина пароля:</label>
+                    <input type="number" class="form-control" id="len" name="len" value="25">
+                </div>
+                {% if answer %}
+                <div class="form-group">
+                    <label for="result">Ваш пароль:</label>
+                    <input type="text" class="form-control" id="result" name="result" value="{{ _pass }}" disabled>
+                </div>
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Сгенерировать пароль</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form class="w-50" style="margin-right: auto; margin-left: auto; margin-bottom: 10px;" method="post"
+                  action="/replace">
+                <h2>Смена пароля</h2>
+                <div class="form-group">
+                    <label for="oldPass">Старый пароль:</label>
+                    <input type="password" class="form-control" id="oldPass" name="oldPass" required>
+                </div>
+                {% if ranswer %}
+                <div class="form-group">
+                    <label for="rresult">Результат: </label>
+                    <input type="text" class="form-control" id="rresult" name="result" value="{{ _result }}" disabled>
+                </div>
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Сменить пароль</button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="bg-light py-3">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2023 <a href="https://github.com/TE1ch0st/passgenius">TE1ch0st</a>. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
