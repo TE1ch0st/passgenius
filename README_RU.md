@@ -11,6 +11,9 @@ git clone https://github.com/TE1ch0st/passgenius.git
 ## Использование
 PassGenius может быть использован для генерации безопасных паролей, а также позволяет заменять скомпрометированные пароли на новые, если это необходимо.
 
+---
+
+# CLI Версия
 ## Вызов справки
 ```shell
 python3 PassGenius.py --help
@@ -30,6 +33,22 @@ python3 PassGenius.py --help
     rep (replace) [flag] - Замена пароля
          -p --Password [you_password] : Пароль требующий замены
 ```
+
+---
+
+# WEB Версия
+<div align="center">
+    <img src="https://raw.githubusercontent.com/TE1ch0st/passgenius/main/assets/web.png" width="300">
+</div>
+
+---
+
+# DESKTOP Версия
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/TE1ch0st/passgenius/main/assets/win.png" width="300">
+</div>
+___
 
 ## Лицензия
 Licensed under the Apache License, Version 2.0
