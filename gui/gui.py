@@ -17,7 +17,7 @@ class PassGenius:
         self.page.window_maximizable = False
         self.page.theme_mode = ft.ThemeMode.DARK
         self.color = '#531683'
-        self.cd = '#ffffff'
+        self.text_color = '#ffffff'
 
         self.domain = ft.TextField(label="URL адрес сайта:")
         self.master_key = ft.TextField(label="Мастер пароль:")
